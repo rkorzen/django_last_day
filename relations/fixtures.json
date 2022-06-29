@@ -1,0 +1,75 @@
+[
+{
+  "model": "relations.author",
+  "pk": 1,
+  "fields": {
+    "name": "Richard",
+    "last_name": "Feynman"
+  }
+},
+{
+  "model": "relations.author",
+  "pk": 2,
+  "fields": {
+    "name": "Kenneth",
+    "last_name": "Brower"
+  }
+},
+{
+  "model": "relations.authorbiogram",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "bio": "Slynny fizyk"
+  }
+},
+{
+  "model": "relations.authorbiogram",
+  "pk": 2,
+  "fields": {
+    "author": 2,
+    "bio": "xxx"
+  }
+},
+{
+  "model": "relations.tag",
+  "pk": 1,
+  "fields": {
+    "name": "biografie"
+  }
+},
+{
+  "model": "relations.publication",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "title": "Pan raczy zartować Panie Feynman",
+    "year": 1975,
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "relations.publication",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "title": "Wyklady z fizyki",
+    "year": 1976,
+    "tags": []
+  }
+},
+{
+  "model": "relations.publication",
+  "pk": 3,
+  "fields": {
+    "author": 2,
+    "title": "Kosmolot i czółno",
+    "year": 1975,
+    "tags": [
+      1
+    ]
+  }
+}
+]
