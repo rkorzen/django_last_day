@@ -7,14 +7,12 @@ from .models import Author
 
 
 def authors_list(request):
-    print(request.GET)
-    q = request.GET.get('q')
 
+    q = request.GET.get('q')
     if q:
         authors = Author.objects.filter(Q(name__istartswith=q) | Q(last_name__istartswith=q))
     else:
         authors = Author.objects.all()
-    # per_page = request.GET.get("per_page", 10)
     p = Paginator(authors, 10)
     page_number = request.GET.get('page')
     page_obj = p.get_page(page_number)

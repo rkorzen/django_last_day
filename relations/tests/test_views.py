@@ -18,3 +18,18 @@ class AuthorViewsTest(TestCase):
 
         self.assertEqual(resp.status_code, 200)
         self.assertIn(a.name, resp.content.decode())
+
+    def test_author_list_view_with_q(self):
+        a = self.create_author()
+        url = reverse("publications:authors_list")
+        url += "?q=xxxxxxx"
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertNotIn(a.name, resp.content.decode())
+
+    def test_author_list_view(self):
+        a = self.create_author()
+        url = reverse("publications:authors_list")
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn(a.name, resp.content.decode())

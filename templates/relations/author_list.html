@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load relations_extras %}
 {% block content %}
     <form>
         query: <input type="text" name="q">
@@ -7,7 +7,7 @@
     </form>
     <ul>
     {% for a in page_obj %}
-    <li><a href="{% url 'publications:author_details' a.id %}">{{ a }}</a></li>
+    <li><a href="{% url 'publications:author_details' a.id %}">{{ a.last_name|cut:"man" }}</a></li>
     {% endfor %}
 
     </ul>
